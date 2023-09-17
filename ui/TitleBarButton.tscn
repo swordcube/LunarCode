@@ -4,7 +4,7 @@
 [ext_resource type="Shader" path="res://ui/TitleBarButton.gdshader" id="1_fufmj"]
 [ext_resource type="Texture2D" uid="uid://b0fo0si5plx48" path="res://assets/titlebar/close.png" id="1_i4fs8"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w24m3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1slh"]
 shader = ExtResource("1_fufmj")
 shader_parameter/amount = 1.0
 
@@ -19,7 +19,7 @@ offset_bottom = 30.0
 script = ExtResource("1_ayu4n")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_w24m3")
+material = SubResource("ShaderMaterial_s1slh")
 position = Vector2(15, 15)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_i4fs8")

@@ -13,6 +13,9 @@ var window_size:Vector2 = Vector2.ZERO
 var distance_to_edge:Vector2 = Vector2.ZERO
 
 func _ready():
+	_update_distance()
+	
+func _update_distance():
 	if top:
 		distance_to_edge.y = global_position.y - window_size.y
 	else:
@@ -24,8 +27,12 @@ func _ready():
 		distance_to_edge.x = global_position.x - window.size.x
 		
 func _process(_delta:float):
+	if not following and window_size != Vector2(window.size):
+		_update_distance()
+	
 	if not following:
 		return
+	
 	if get_window().mode == Window.MODE_FULLSCREEN:
 		return
 	
