@@ -18,7 +18,7 @@ TextEdit/fonts/font = ExtResource("5_76guq")
 TextEdit/styles/focus = SubResource("StyleBoxFlat_awhy0")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_awhy0")
 
-[sub_resource type="CodeHighlighter" id="CodeHighlighter_suxuf"]
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_phft1"]
 script = ExtResource("5_fwbkl")
 
 [node name="Main" type="Control"]
@@ -46,7 +46,6 @@ offset_bottom = 0.0
 layout_mode = 1
 
 [node name="CodeField" type="CodeEdit" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_hpe5t")
 draw_tabs = true
-syntax_highlighter = SubResource("CodeHighlighter_suxuf")
+syntax_highlighter = SubResource("CodeHighlighter_phft1")
 gutters_draw_line_numbers = true
 auto_brace_completion_enabled = true
 auto_brace_completion_highlight_matching = true

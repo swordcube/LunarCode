@@ -23,8 +23,10 @@ func _ready():
 	else:
 		distance_to_edge.x = global_position.x - window.size.x
 		
-func _process(delta:float):
+func _process(_delta:float):
 	if not following:
+		return
+	if get_window().mode == Window.MODE_FULLSCREEN:
 		return
 	
 	if top:

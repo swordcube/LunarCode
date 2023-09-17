@@ -23,6 +23,6 @@ func _on_gui_input(event:InputEvent):
 		following = not following
 		drag_start_pos = get_local_mouse_position()
 		
-func _process(delta:float):
+func _process(_delta:float):
 	if following:
 		window.position += Vector2i(get_global_mouse_position() - drag_start_pos)

@@ -8,5 +8,5 @@ extends Control
 func _ready():
 	size = window.size
 
-func _process(delta:float):
+func _process(_delta:float):
 	size = window.size

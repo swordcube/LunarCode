@@ -58,10 +58,7 @@ func _on_button_press():
 			window.mode = Window.MODE_MINIMIZED
 			
 		"Maximize":
-			if window.mode == Window.MODE_MAXIMIZED:
-				window.mode = Window.MODE_WINDOWED
-			else:
-				window.mode = Window.MODE_MAXIMIZED
+			window.mode = Window.MODE_WINDOWED if window.mode == Window.MODE_FULLSCREEN else Window.MODE_FULLSCREEN
 		
 		"Close":
 			get_tree().quit()
