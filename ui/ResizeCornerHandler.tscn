@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://vofxyiffwgps"]
+
+[ext_resource type="Script" path="res://scripts/ResizeCornerHandler.gd" id="1_243lu"]
+
+[node name="ResizeCornerHandler" type="Control"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 3
+anchors_preset = 0
+offset_bottom = 10.0
+size_flags_horizontal = 3
+size_flags_vertical = 10
+mouse_default_cursor_shape = 9
+script = ExtResource("1_243lu")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://btviqi3t1hgmg"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_21saw"]
+[ext_resource type="PackedScene" uid="uid://bj6ipyj26yomr" path="res://ui/TitleBar.tscn" id="2_yvcyh"]
+[ext_resource type="PackedScene" uid="uid://bht83oubljokh" path="res://ui/title_button_layouts/All.tscn" id="3_oxlo5"]
+[ext_resource type="FontFile" uid="uid://cx8dmtqe23wic" path="res://assets/fonts/JetBrainsMono-Medium.ttf" id="5_76guq"]
+[ext_resource type="Script" path="res://language_syntax/GDScriptSyntax.gd" id="5_fwbkl"]
+[ext_resource type="PackedScene" uid="uid://biwl5h1gdsdd2" path="res://ui/WindowResizing.tscn" id="6_sbqau"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_im50b"]
+bg_color = Color(0.235294, 0.219608, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awhy0"]
+bg_color = Color(0.235294, 0.219608, 0.211765, 1)
+
+[sub_resource type="Theme" id="Theme_hpe5t"]
+TextEdit/fonts/font = ExtResource("5_76guq")
+TextEdit/styles/focus = SubResource("StyleBoxFlat_awhy0")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_awhy0")
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_suxuf"]
+script = ExtResource("5_fwbkl")
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 700.0
+offset_bottom = 500.0
+script = ExtResource("1_21saw")
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_im50b")
+metadata/_edit_lock_ = true
+
+[node name="TitleBar" parent="." instance=ExtResource("2_yvcyh")]
+layout_mode = 1
+offset_bottom = 0.0
+
+[node name="Buttons" parent="TitleBar" instance=ExtResource("3_oxlo5")]
+layout_mode = 1
+
+[node name="CodeField" type="CodeEdit" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_hpe5t")
+draw_tabs = true
+syntax_highlighter = SubResource("CodeHighlighter_suxuf")
+gutters_draw_line_numbers = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+
+[node name="WindowResizing" parent="." instance=ExtResource("6_sbqau")]
+layout_mode = 1
+metadata/_edit_lock_ = true

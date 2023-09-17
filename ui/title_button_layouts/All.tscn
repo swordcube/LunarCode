@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bht83oubljokh"]
+
+[ext_resource type="PackedScene" uid="uid://bkilcjxyeana7" path="res://ui/TitleBarButton.tscn" id="1_f1typ"]
+[ext_resource type="Texture2D" uid="uid://dbmh48t3aprgj" path="res://assets/titlebar/minimize.png" id="2_mlxom"]
+[ext_resource type="Texture2D" uid="uid://62xw1j234qm5" path="res://assets/titlebar/maximize.png" id="3_3nh8p"]
+
+[node name="Buttons" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_bottom = 30.0
+grow_horizontal = 0
+
+[node name="Minimize" parent="." instance=ExtResource("1_f1typ")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_right = -60.0
+grow_horizontal = 0
+texture = ExtResource("2_mlxom")
+
+[node name="Maximize" parent="." instance=ExtResource("1_f1typ")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_right = -30.0
+grow_horizontal = 0
+texture = ExtResource("3_3nh8p")
+
+[node name="Close" parent="." instance=ExtResource("1_f1typ")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_right = 0.0
+grow_horizontal = 0

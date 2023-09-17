@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkilcjxyeana7"]
+
+[ext_resource type="Script" path="res://scripts/TitleBarButton.gd" id="1_ayu4n"]
+[ext_resource type="Shader" path="res://ui/TitleBarButton.gdshader" id="1_fufmj"]
+[ext_resource type="Texture2D" uid="uid://b0fo0si5plx48" path="res://assets/titlebar/close.png" id="1_i4fs8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w24m3"]
+shader = ExtResource("1_fufmj")
+shader_parameter/amount = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi03v"]
+size = Vector2(30, 30)
+
+[node name="TitleBarButton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 30.0
+offset_bottom = 30.0
+script = ExtResource("1_ayu4n")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_w24m3")
+position = Vector2(15, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_i4fs8")
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(15, 15)
+
+[node name="Shape" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_qi03v")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[connection signal="mouse_entered" from="Hitbox" to="." method="_on_hitbox_mouse_entered"]
+[connection signal="mouse_exited" from="Hitbox" to="." method="_on_hitbox_mouse_exited"]

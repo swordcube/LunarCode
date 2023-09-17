@@ -1,0 +1,101 @@
+[gd_scene load_steps=3 format=3 uid="uid://biwl5h1gdsdd2"]
+
+[ext_resource type="PackedScene" uid="uid://cpqy63ulrlesh" path="res://ui/ResizeBarHandler.tscn" id="1_4d44s"]
+[ext_resource type="PackedScene" uid="uid://vofxyiffwgps" path="res://ui/ResizeCornerHandler.tscn" id="2_qx40a"]
+
+[node name="WindowResizing" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopResize" parent="." instance=ExtResource("1_4d44s")]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_right = -10.0
+offset_bottom = 0.0
+grow_horizontal = 2
+top = true
+
+[node name="BottomResize" parent="." instance=ExtResource("1_4d44s")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LeftResize" parent="." instance=ExtResource("1_4d44s")]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = -10.0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+left = true
+vertical = false
+
+[node name="RightResize" parent="." instance=ExtResource("1_4d44s")]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+vertical = false
+
+[node name="TopLeftResize" parent="." instance=ExtResource("2_qx40a")]
+offset_right = 10.0
+mouse_default_cursor_shape = 12
+left = true
+top = true
+
+[node name="TopRightResize" parent="." instance=ExtResource("2_qx40a")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -10.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 11
+top = true
+
+[node name="BottomLeftResize" parent="." instance=ExtResource("2_qx40a")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 0.0
+grow_vertical = 0
+mouse_default_cursor_shape = 11
+left = true
+
+[node name="BottomRightResize" parent="." instance=ExtResource("2_qx40a")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -10.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 12

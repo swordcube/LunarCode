@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj6ipyj26yomr"]
+
+[ext_resource type="Script" path="res://scripts/TitleBar.gd" id="1_4ltt1"]
+[ext_resource type="Texture2D" uid="uid://b14sxq6lu27gj" path="res://icon.png" id="2_04tah"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b840w"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i0ona"]
+font_size = 12
+
+[node name="TitleBar" type="Panel"]
+custom_minimum_size = Vector2(0, 30)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 30.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b840w")
+script = ExtResource("1_4ltt1")
+
+[node name="TitleText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = -9.0
+offset_right = -19.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Window Title Here"
+label_settings = SubResource("LabelSettings_i0ona")
+horizontal_alignment = 1
+
+[node name="IconArea" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 30.0
+offset_bottom = 30.0
+
+[node name="Sprite" type="Sprite2D" parent="IconArea"]
+position = Vector2(15, 15)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_04tah")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
